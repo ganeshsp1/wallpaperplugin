@@ -1,0 +1,21 @@
+name: wallpaperplugin
+description: Flutter plugin to set wallpaper in android, it can be used to directly set any image or crop and set as wallpaper.
+author: Ganesh S P <ganesh.sp006@gmail.com>
+homepage: https://github.com/ganeshsp1/wallpaperplugin
+version: 0.1.0
+
+environment:
+  sdk: ">=2.1.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+flutter:
+  plugin:
+    androidPackage: com.ganeshsp.plugins.wallpaper
+    pluginClass: WallpaperPluginManager
