@@ -14,8 +14,8 @@ class Wallpaperplugin {
   ///in the external storage.
   static Future<bool> setWallpaperWithCrop({@required String localFile}) async {
     try {
-      await _channel
-          .invokeMethod<bool>('setWallpaperWithCrop',  <String, String>{'filePath': localFile});
+      await _channel.invokeMethod<bool>(
+          'setWallpaperWithCrop', <String, String>{'filePath': localFile});
       return true;
     } on PlatformException {
       print('Error : PlatformException');
@@ -28,8 +28,8 @@ class Wallpaperplugin {
   ///in the external storage.
   static Future<bool> setAutoWallpaper({@required String localFile}) async {
     try {
-      await _channel
-          .invokeMethod<bool>('setAutoWallpaper', <String, String>{'filePath': localFile});
+      await _channel.invokeMethod<bool>(
+          'setAutoWallpaper', <String, String>{'filePath': localFile});
     } on PlatformException {
       print('Error : PlatformException');
     }
