@@ -16,6 +16,6 @@ void main() {
   });
 
   test('setWallpaper', () async {
-    expect(await Wallpaperplugin.setWallpaperWithCrop(localFile: ""), 'false');
+    expect(await Wallpaperplugin.setWallpaperWithCrop(localFile: ''), 'false');
   });
 }
