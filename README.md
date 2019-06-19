@@ -1,7 +1,5 @@
 # wallpaperplugin
 
-# Shared preferences plugin
-
 [![pub package](https://img.shields.io/pub/v/wallpaperplugin.svg)](https://pub.dartlang.org/packages/wallpaperplugin)
 
 Wallpaper plugin can be used to set wallpaper in android from any file in gallery.
