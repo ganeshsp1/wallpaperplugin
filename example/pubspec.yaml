@@ -14,11 +14,11 @@ dependencies:
   cupertino_icons: ^0.1.2
 
 dev_dependencies:
+  dio: ^3.0.10
   flutter_test:
     sdk: flutter
-  dio: ^2.1.2
-  path_provider:
-  permission_handler:
+  path_provider: ^1.6.27
+  permission_handler: ^5.0.1+1
   wallpaperplugin:
     path: ../
 

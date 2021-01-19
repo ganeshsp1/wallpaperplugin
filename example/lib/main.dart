@@ -103,15 +103,19 @@ class _WallpaperExampleAppState extends State<WallpaperExampleApp> {
   /// This method checks for permission and if not given will request the user for the same.
   /// It will return true if permission is given, or else will return null
   static Future<bool> _checkAndGetPermission() async {
-    final PermissionStatus permission = await PermissionHandler()
-        .checkPermissionStatus(PermissionGroup.storage);
-    if (permission != PermissionStatus.granted) {
-      final Map<PermissionGroup, PermissionStatus> permissions =
-          await PermissionHandler()
-              .requestPermissions(<PermissionGroup>[PermissionGroup.storage]);
-      if (permissions[PermissionGroup.storage] != PermissionStatus.granted) {
-        return null;
-      }
+//    final PermissionStatus permission = await PermissionHandler()
+//        .checkPermissionStatus(PermissionGroup.storage);
+//    if (permission != PermissionStatus.granted) {
+//      final Map<PermissionGroup, PermissionStatus> permissions =
+//          await PermissionHandler()
+//              .requestPermissions(<PermissionGroup>[PermissionGroup.storage]);
+//      if (permissions[PermissionGroup.storage] != PermissionStatus.granted) {
+//        return null;
+//      }
+//    }
+
+    if(await Permission.storage.isGranted){
+      return await (Permission.storage.request()).isGranted;
     }
     return true;
   }

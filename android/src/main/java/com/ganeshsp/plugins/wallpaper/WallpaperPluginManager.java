@@ -9,7 +9,9 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.provider.MediaStore;
+import android.view.View;
 import android.widget.Toast;
+import android.content.Intent;
 
 import java.io.File;
 import java.io.IOException;
@@ -64,11 +66,19 @@ public class WallpaperPluginManager implements MethodCallHandler {
       try {
         Uri contentURI = getImageContentUri(context, file.getAbsolutePath());
 //        wallpaperManager.setBitmap(bitmap, null, true, WallpaperManager.FLAG_LOCK)
-          context.startActivity(wallpaperManager.getCropAndSetWallpaperIntent(contentURI));
-//          Toast.makeText(context, "Wallpaper set", Toast.LENGTH_SHORT).show();
+//        context.startActivity(wallpaperManager.getCropAndSetWallpaperIntent(contentURI));
+//        Toast.makeText(context, "Wallpaper set", Toast.LENGTH_SHORT).show();
 //        Bitmap bitmap = BitmapFactory.decodeFile(file.getAbsolutePath());
 //        InputStream inputStream = new FileInputStream(file);
 //        wallpaperManager.setBitmap(bitmap, null, true);
+      try {
+        context.startActivity(wallpaperManager.getCropAndSetWallpaperIntent(contentURI));
+          } catch (IllegalArgumentException e) {
+         // Seems to be an Oreo bug - fall back to using the bitmap instead
+          Bitmap bitmap = MediaStore.Images.Media.getBitmap(this.activity.getContentResolver(), contentURI);
+          WallpaperManager.getInstance(this.activity).setBitmap(bitmap);
+        }
+        Toast.makeText(context, "Wallpaper set", Toast.LENGTH_SHORT).show();
       } catch (Exception e) {
         e.printStackTrace();
         resultValue = false;
