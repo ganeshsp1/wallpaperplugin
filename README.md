@@ -3,7 +3,7 @@
 [![pub package](https://img.shields.io/pub/v/wallpaperplugin.svg)](https://pub.dartlang.org/packages/wallpaperplugin)
 
 Wallpaper plugin can be used to set wallpaper in android from any file in gallery.
-This plugin cannot be used with iOs as it doesn't support wallpaper setting to 3rd party apps.
+This plugin cannot be used with iOS as it doesn't support wallpaper setting to 3rd party apps.
 
 ## Usage
 To use this plugin, add `wallpaperplugin:` as a [dependency in your pubspec.yaml file](https://flutter.io/platform-plugins/).
